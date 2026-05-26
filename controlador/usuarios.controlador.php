@@ -28,9 +28,9 @@ class ControladorUsuarios
             /*===VALIDAR IMAGEN=== */
 
             $ruta = $_POST["fotoActual"];
-            if (isset($_FILES["editarFoto"]["tmp-name"]) && !empty($_FILES["editarFoto"]["tmp-name"])) {
+            if (isset($_FILES["editarFoto"]["tmp_name"]) && !empty($_FILES["editarFoto"]["tmp_name"])) {
 
-                list($ancho, $alto) = getimagesize($_FILES["editarFoto"]["tmp-name"]);
+                list($ancho, $alto) = getimagesize($_FILES["editarFoto"]["tmp_name"]);
                 $nuevoAncho = 500;
                 $nuevoAlto = 500;
                 
@@ -43,7 +43,7 @@ class ControladorUsuarios
 
                 /* PREGUNTAMOS SI EXISTE OTRA IMAGEN EN LA BASE DE DATOS*/
 
-                if (!empty($_POST["fotoActal"])) {
+                if (!empty($_POST["fotoActual"])) {
 
                     unlink($_POST["fotoActual"]);
                 } else {
